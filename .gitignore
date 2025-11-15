@@ -1,0 +1,16 @@
+# General macOS cruft
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor folders
+.idea/
+.vscode/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node modules (por si se usan herramientas locales)
+node_modules/

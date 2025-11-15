@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La Ruleta de los Nombres</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>La Ruleta de los Nombres</h1>
+      <p>Gira la ruleta para elegir al azar a una persona de la clase.</p>
+    </header>
+
+    <main class="layout">
+      <section class="wheel-panel">
+        <canvas id="wheelCanvas" width="500" height="500" aria-label="Ruleta con nombres" role="img"></canvas>
+        <button id="spinButton" class="primary">Girar ruleta</button>
+        <div id="selectionBanner" aria-live="polite">
+          <span id="selectionMessage"></span>
+        </div>
+      </section>
+
+      <section class="controls">
+        <h2>Lista de alumnado</h2>
+        <p>
+          Para usar la ruleta carga un archivo <code>.txt</code> con un nombre por línea o pega el listado
+          directamente en el cuadro inferior.
+        </p>
+
+        <div class="control-group textarea-group">
+          <label for="manualInput" class="control-label">Pegar listado manualmente</label>
+          <textarea id="manualInput" rows="6" spellcheck="false" placeholder="Pega aquí nombres con un nombre por línea"></textarea>
+          <button id="applyManual" class="ghost">Aplicar listado pegado</button>
+        </div>
+
+        <div class="control-group">
+          <label for="nameFileInput" class="control-label">Cargar fichero de alumnado</label>
+          <input id="nameFileInput" type="file" accept="text/plain" />
+        </div>
+
+        <div class="control-group shortcut-buttons">
+          <span class="control-label">Accesos rápidos</span>
+          <div class="shortcut-grid">
+            <button id="keepSurname" class="ghost" disabled>Dejar apellidos</button>
+            <button id="keepName" class="ghost" disabled>Dejar nombre</button>
+          </div>
+        </div>
+
+        <div class="control-group textarea-group">
+          <label for="namesPreview" class="control-label">Nombres detectados</label>
+          <textarea id="namesPreview" rows="10" spellcheck="false"></textarea>
+          <small class="hint">Puedes editar esta lista y se actualizará la ruleta.</small>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
